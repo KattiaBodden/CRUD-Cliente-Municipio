@@ -1,0 +1,29 @@
+extends base.pug
+
+block title
+    title Clientes
+
+block container
+    h1(color="blue")  Lista de Clientes
+    if (data.length != 0)
+        table.table.table-striped(border=15)
+            thead
+                tr
+                th(scope='col') Id
+                th(scope='col') Nombre
+                th(scope='col') Apellido
+                th(scope='col') Dirección
+                th(scope='col') Teléfono
+            tbody
+                each val in data
+                    tr
+                        td #{val.id}
+                        td #{val.nombre}
+                        td #{val.apellido}
+                        td #{val.direccion} 
+                        td #{val.telefono}
+                        td 
+                            a.w-10.btn.btn-lg.btn-danger(href="/eliminarCliente/"+val.id) Eliminar
+                        
+        a.w-10.btn.btn-lg.btn-success(href="/") Ingresar Cliente
+        a.w-10.btn.btn-lg.btn-success(href="/modificarClientes") Modificar Cliente

@@ -1,0 +1,31 @@
+extends base.pug
+block head
+    link(rel="stylesheet", href="/bootstrap/bootstrap.min.css")
+
+block title
+    title Municipios
+
+block container
+    h1  Lista de Municipios
+    if (data.length != 0)
+        table.table.table-striped(border=15)
+            thead
+                tr
+                th(scope='col') Id
+                th(scope='col') Municipio
+                th(scope='col') Departamento
+                
+            tbody
+                each val in data
+                    tr
+                        td #{val.id}
+                        td #{val.municipio}
+                        td #{val.departamento}
+                        td 
+                            a.w-10.btn.btn-lg.btn-danger(href="/eliminarMunicipio/"+val.id) Eliminar
+                        
+        a.w-10.btn.btn-lg.btn-success(href="/municipio") Ingresar Municipio
+    
+    else 
+        p No se han ingresado municipios
+        a.w-15.btn.btn-lg.btn-success(href="/municipio") Ingresar Municipios

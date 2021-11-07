@@ -1,0 +1,31 @@
+extends base.pug
+
+block title 
+    title Municipio
+
+block container 
+    .container.mt-5(style={width:'350px'})
+    h1 Ingresar Municipio 
+    hr
+    form(action="/municipio" method="post" )
+        .form-group     
+            label(for="municipio") Municipio
+            input#municipio.form-control(type="text" name="nombre")
+        
+        .form-group.mt-3    
+            label(for="departamento") Departamento
+            input#departamento.form-control(type="text" name="apellido")
+
+        .form-group.mt-4  
+            .d-grid.gap-2
+                button.btn.btn-primary Guardar
+ 
+            .d-grid.gap-2.mt-2
+                a.btn.btn-success(href="/verMunicipios") Ver Lista Municipios
+            
+            .d-grid.gap-2.mt-2
+                a.btn.btn-success(href="/") Ingresar Clientes
+                
+            .d-grid.gap-2.mt-2
+                a.btn.btn-success(href="/verClientes") Ver Lista Clientes
+            

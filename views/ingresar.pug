@@ -1,0 +1,38 @@
+extends base.pug
+
+block title 
+    title Ingresar
+
+block container 
+    .container.mt-5(style={width:'350px'})
+    h1 Ingresar Clientes 
+    hr
+    form(action="/ingresar" method="post" )
+        .form-group     
+            label(for="nombre") Nombre
+            input#nombre.form-control(type="text" name="nombre")
+        
+        .form-group.mt-3    
+            label(for="apellido") Apellido
+            input#apellido.form-control(type="text" name="apellido")
+
+        .form-group.mt-3   
+            label(for="direccion") Dirección
+            input#direccion.form-control(type="text" name="direccion")
+
+        .form-group.mt-3   
+            label(for="telefono") Teléfono
+            input#telefono.form-control(type="text" name="telefono")
+
+        .form-group.mt-3  
+            .d-grid.gap-2
+                button.btn.btn-primary Guardar
+ 
+            .d-grid.gap-2.mt-2
+                a.btn.btn-success(href="/verClientes") Ver Lista Clientes
+            
+            .d-grid.gap-2.mt-2
+                a.btn.btn-success(href="/municipio") Ingresar Municipio
+            
+            .d-grid.gap-2.mt-2
+                a.btn.btn-success(href="/verMunicipios") Ver Lista Municipios
